@@ -46,7 +46,7 @@ export default async function fetchAdapter(config) {
 async function getResponse(request, config) {
     let stageOne;
     try {
-        stageOne = await fetch(request);
+        stageOne = await fetch(request, config);
     } catch (e) {
         return createError('Network Error', config, 'ERR_NETWORK', request);
     }
